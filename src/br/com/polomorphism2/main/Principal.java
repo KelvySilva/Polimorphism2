@@ -1,5 +1,6 @@
 package br.com.polomorphism2.main;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,20 +13,19 @@ import br.com.polomorphism2.util.Calculador;
 
 public class Principal {
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) throws NoSuchMethodException, SecurityException, ClassNotFoundException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException {
 		
 		List<Calculador> lista = new ArrayList<Calculador>();
 		RH rh = new RH();
 		
 		Gerente g = new Gerente();
-		g.setPayment(5000);
+		g.setPagamento(5000);
 		Supervisor s = new Supervisor();
-		s.setPayment(2500);
+		s.setPagamento(2500);
 		Analista a = new Analista();
-		a.setPayment(1800);
+		a.setPagamento(1800);
 		Auxiliar ax = new Auxiliar();
-		ax.setPayment(1200);
-		
+		ax.setPagamento(1200);
 		lista.add(g);
 		lista.add(s);
 		lista.add(a);
